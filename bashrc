@@ -127,3 +127,12 @@ alias grab='rm /tmp/screengrab.png 2>/dev/null; scrot -q100 -s /tmp/screengrab.p
 
 # easily hop to definition
 alias vimdef='~/.vimdef.sh'
+
+# git stuff.
+# I cloned like 'git clone <git url> ~/git' and then I 'git workspace add
+# ~/git-second' to get to this point.
+alias tg='~/git/bin-wrappers/git'
+alias dbtg='GIT_DEBUGGER="gdb -tui --args" ~/git/bin-wrappers/git'
+alias tg2='~/git-second/bin-wrappers/git'
+alias dbtg2='GIT_DEBUGGER="gdb -tui --args" ~/git-second/bin-wrappers/git'
+alias whatbroke='~/.whatbroke.sh'
