@@ -111,6 +111,7 @@ alias gg='git grep'
 alias proveit='(cd t && prove -j16 -v --shuffle t[0-9]*.sh)'
 alias mkdbg='make -j64 CFLAGS+=-g'
 alias huh='~/.huh.sh'
+alias vim-find='~/.vim-find.sh'
 
 # something is weird with byobu and it doesn't work the way it used to.
 # ask it to always attach to a specific session.
