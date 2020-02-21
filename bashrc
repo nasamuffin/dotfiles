@@ -104,3 +104,21 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# lazy aliases
+alias g='git'
+__git_complete g _git
+alias gg='git grep'
+alias proveit='(cd t && prove -j16 -v --shuffle t[0-9]*.sh)'
+alias mkdbg='make -j64 CFLAGS+=-g'
+
+# something is weird with byobu and it doesn't work the way it used to.
+# ask it to always attach to a specific session.
+alias byobu='pa; byobu new-session -t "default"'
+
+# show the git branch
+source /etc/bash_completion.d/git-prompt
+export GIT_PS1_SHOWDIRTYSTATE='yes'
+export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\e[0;35m\]\u\[\e[m\]@\[\e[0;36m\]\h\[\e[m\]:\w\[\e[0;32m\]$(__git_ps1 " [%s]")\[\e[m\]\$ '
+
+# i cannot type this without gagging
+alias grab='rm /tmp/screengrab.png 2>/dev/null; scrot -q100 -s /tmp/screengrab.png && xclip -selection c -t image/png /tmp/screengrab.png'
