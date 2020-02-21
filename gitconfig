@@ -1,0 +1,12 @@
+[color]
+	ui = auto
+[user]
+	name = Emily Shaffer
+[core]
+	pager = less -+$LESS -R
+[merge]
+	tool = vimdiff
+[grep]
+	lineNumber = true
+[rerere]
+	enabled = true
