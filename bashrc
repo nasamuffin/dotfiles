@@ -124,3 +124,6 @@ export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\e[0;35m\]\u
 
 # i cannot type this without gagging
 alias grab='rm /tmp/screengrab.png 2>/dev/null; scrot -q100 -s /tmp/screengrab.png && xclip -selection c -t image/png /tmp/screengrab.png'
+
+# easily hop to definition
+alias vimdef='~/.vimdef.sh'
