@@ -126,10 +126,6 @@ alias mkdbg='make -j64 CFLAGS+=-g'
 alias huh='~/.huh.sh'
 alias vim-find='~/.vim-find.sh'
 
-# something is weird with byobu and it doesn't work the way it used to.
-# ask it to always attach to a specific session.
-alias byobu='pa; byobu new-session -t "default"'
-
 # i cannot type this without gagging
 alias grab='rm /tmp/screengrab.png 2>/dev/null; scrot -q100 -s /tmp/screengrab.png && xclip -selection c -t image/png /tmp/screengrab.png'
 
