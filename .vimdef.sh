@@ -25,7 +25,7 @@ DEF="$(git grep -E -e "^([a-z_]+\** )+\**$1\(" "${@:2}" -- ":!*.h*")"
 
 # If there wasn't a match, this might be a macro.
 if [[ -z "$DEF" ]]; then
-  DEF="$(git grep -E -e "^#define $1" "${@:2}")"
+  DEF="$(git grep -E -e "^#define $1\(" "${@:2}")"
 fi
 
 if [[ -z "$DEF" ]]; then
