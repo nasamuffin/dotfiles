@@ -116,8 +116,8 @@ alias gg='git grep'
 # bash completion for lazy aliases
 if [ -f "/usr/share/bash-completion/completions/git" ]; then
   . "/usr/share/bash-completion/completions/git"
-  __git_complete g _git
-  __git_complete gg _git_grep
+  __git_complete g git
+  __git_complete gg git_grep
 fi
 
 # more lazy aliases
