@@ -58,3 +58,10 @@ command Git call SetGitTabs()
 " use the cool highlighter for mutt mail replies
 autocmd BufNewFile,BufRead /tmp/mutt* set syntax=replydiff
 autocmd BufNewFile,BufRead ~/tmp/mutt* set syntax=replydiff
+
+" handy read thing for getting code snippets
+function ReadExcerpt(file, start, end)
+  let sedscript = "read!sed -n \"" . a:start . "," . a:end . "p\" \"" . a:file . "\""
+  :exe sedscript
+endfunction
+command -nargs=+ -complete=file Excerpt call ReadExcerpt(<f-args>)
