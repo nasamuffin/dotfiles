@@ -142,5 +142,6 @@ alias dbtg2='GIT_DEBUGGER="gdb -tui --args" ~/git-second/bin-wrappers/git'
 alias tg3='~/git-third/bin-wrappers/git'
 alias dbtg3='GIT_DEBUGGER="gdb -tui --args" ~/git-third/bin-wrappers/git'
 alias whatbroke='~/.whatbroke.sh'
+alias try='~/.try.sh'
 # cd to the top level directory of the current git repo
 alias cdg='cd $(git rev-parse --show-toplevel)'
