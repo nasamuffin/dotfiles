@@ -10,6 +10,10 @@ function open_vim_to_loc {
   vim +"$2" "$1"
 }
 
+function show_vim_loc {
+  echo +"$2" "$1"
+}
+
 if [[ -z "$@" ]]; then
   echo "usage: vimdef <full-fn-name> [<git grep arg>...]"
   exit
@@ -34,4 +38,8 @@ if [[ -z "$DEF" ]]; then
 fi
 
 # Don't quote $() because we want it interpreted as separate args.
-open_vim_to_loc $(echo $DEF | tr ':' ' ')
+if [[ "$VIMDEF_FROM_VIM" ]]; then
+  show_vim_loc $(echo $DEF | tr ':' ' ')
+else
+  open_vim_to_loc $(echo $DEF | tr ':' ' ')
+fi

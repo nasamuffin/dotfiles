@@ -59,9 +59,33 @@ command Git call SetGitTabs()
 autocmd BufNewFile,BufRead /tmp/mutt* set syntax=replydiff
 autocmd BufNewFile,BufRead ~/tmp/mutt* set syntax=replydiff
 
+highlight CustomHighlighted ctermbg=green guibg=green
+function HighlightThisLine()
+  let line=getline('.')
+  :matchaddpos("CustomHighlighted", line)
+endfunction
+
+" use Felipe Contreras's sharness highlighter
+au! BufRead,BufNewFile */git*/t/*.sh set ft=sharness
+
 " handy read thing for getting code snippets
 function ReadExcerpt(file, start, end)
   let sedscript = "read!sed -n \"" . a:start . "," . a:end . "p\" \"" . a:file . "\""
   :exe sedscript
 endfunction
 command -nargs=+ -complete=file Excerpt call ReadExcerpt(<f-args>)
+
+" look for filename in a new split
+function s:DoVimDef(name)
+  let $VIMDEF_FROM_VIM=1
+  let l:def = system("~/.vimdef.sh " . a:name)
+  let l:argv = split(l:def)
+  if (len(l:argv) == 2)
+    let l:loc = l:argv[0]
+    let l:file = l:argv[1]
+    exec "split" l:loc l:file
+  else
+    echo l:def
+  endif
+endfunction
+command -nargs=1 VimDef call s:DoVimDef(<f-args>)
