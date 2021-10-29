@@ -121,7 +121,7 @@ if [ -f "/usr/share/bash-completion/completions/git" ]; then
 fi
 
 # more lazy aliases
-alias proveit='(cd t && prove -j16 -v --shuffle t[0-9]*.sh)'
+alias proveit='(cd t && prove -j16 -fv --shuffle t[0-9]*.sh)'
 alias mkdbg='make -j64 CFLAGS+=-g'
 alias huh='~/.huh.sh'
 alias vim-find='~/.vim-find.sh'
